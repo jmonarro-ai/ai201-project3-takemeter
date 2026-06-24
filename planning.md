@@ -127,3 +127,12 @@ I will build a simple web interface (Gradio or HTML+JS) that accepts a new post 
 
 ### Error Pattern Analysis (+1pt)
 Beyond listing individual wrong predictions, I will identify a systematic pattern across errors — a specific label pair, post type, or distributional issue the model consistently struggles with — and support it with evidence from the full error set.
+
+
+## Stretch Features Plan
+
+### Deployed Interface  - COMPLETED
+Built a Gradio web interface that accepts a new post as text input, runs it through the fine-tuned DistilBERT model, and displays the predicted label and confidence score with all three label probabilities. Interface code is committed at `interface/app.py`. Runs inside Google Colab after fine-tuning is complete.
+
+### Error Pattern Analysis - COMPLETED
+Identified a systematic pattern across all 6 errors: the model consistently misclassifies calm, observational reaction posts as hot_takes. All errors share the absence of emotional markers (ALL CAPS, exclamation marks) and a declarative sentence structure. Full analysis with supporting evidence is documented in the README evaluation report.
