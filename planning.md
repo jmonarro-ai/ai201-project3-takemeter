@@ -57,9 +57,20 @@ A post that provides one statistic alongside a strong emotional or provocative c
 
 ### Additional Edge Cases Encountered During Annotation
 
-*(To be filled in during Milestone 3 — at least 3 specific difficult examples with decisions will be documented here.)*
+**Difficult Example 1 — analysis vs. hot_take:**
+> "Norway's 7 goals in Group I after 2 matches is joint-second highest in the tournament, behind only Germany's 9 goals in Group E. Their direct vertical play is bypassing midfield lines effectively and creating overloads in the box."
 
----
+This post cites a real statistic and includes a tactical observation, which pulls toward `analysis`. However it only uses one data point and the tactical claim is brief rather than structured. Decision: labeled `analysis` because the combination of a verified stat and a tactical explanation clears the minimum bar for structured argument.
+
+**Difficult Example 2 — hot_take vs. reaction:**
+> "Scotland will always be Scotland. Great in qualifying, absolutely bottling it when it matters at tournament football."
+
+The emotional frustration in this post feels like a `reaction`, but there is no specific match event being responded to — it is making a broad declarative claim about Scotland's identity as a tournament team. Decision: labeled `hot_take` because the core of the post is a pattern-based assertion, not an emotional response to a specific moment.
+
+**Difficult Example 3 — hot_take vs. reaction:**
+> "Senegal has more talent than half the European teams at this tournament and they're as good as eliminated. Disgraceful."
+
+The word "Disgraceful" and the emotional tone suggest `reaction`, but the post's core is a bold unsupported claim comparing Senegal's talent to European teams — a classic hot take structure. Decision: labeled `hot_take` because the dominant content is an assertive claim, not a response to a specific match event.
 
 ## Data Collection Plan
 
