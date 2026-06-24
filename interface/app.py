@@ -1,15 +1,23 @@
 # TakeMeter — Deployed Interface
-# Run instructions:
-#   1. Open the Colab notebook and run all cells through Section 3 (fine-tuning)
-#   2. Add the cell below at the bottom of the notebook and run it
-#   3. Click the public Gradio URL that appears
-
-# Requirements: gradio, torch, transformers
-# !pip install -q gradio
+# 
+# HOW TO RUN:
+# This interface runs inside the Colab notebook, not as a standalone script.
+# Steps:
+#   1. Open the Colab notebook
+#   2. Run all cells through Section 3 (fine-tuning) to load the trained model
+#   3. Install gradio: !pip install -q gradio
+#   4. Copy and run the code below as a new cell at the bottom of the notebook
+#   5. Click the public Gradio URL that appears in the output
+#
+# Dependencies: gradio, torch, transformers (all available in Colab)
 
 import gradio as gr
 import torch
 import numpy as np
+
+# Detect device
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)
 
 def classify_post(text):
     if not text.strip():
@@ -22,13 +30,16 @@ def classify_post(text):
         max_length=256
     )
     
+    # Move inputs to same device as model
+    inputs = {k: v.to(device) for k, v in inputs.items()}
+    
     with torch.no_grad():
         outputs = model(**inputs)
     
     probs = torch.nn.functional.softmax(outputs.logits, dim=-1)
-    probs_np = probs.numpy()[0]
+    probs_np = probs.cpu().numpy()[0]
     
-    pred_id = np.argmax(probs_np)
+    pred_id = int(np.argmax(probs_np))
     pred_label = ID_TO_LABEL[pred_id]
     confidence = probs_np[pred_id]
     
@@ -59,4 +70,4 @@ demo = gr.Interface(
     allow_flagging="never"
 )
 
-demo.launch(share=True)
+demo.launch(share=True, debug=True)
