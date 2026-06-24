@@ -274,6 +274,14 @@ ai201-project3-takemeter/
 
 ## Deployed Interface *(Stretch Feature)*
 
-A simple web interface that accepts a post as text input and returns the predicted label and confidence score using the fine-tuned DistilBERT model.
+A simple Gradio web interface that accepts a World Cup post as text input and returns the predicted label and confidence score using the fine-tuned DistilBERT model.
 
-*(Interface code and run instructions will be added after deployment — see next steps)*
+**How to run:**
+1. Open the Colab notebook and run all cells through Section 3 (fine-tuning) to load the trained model into memory
+2. Run the interface cell at the bottom of the notebook (`interface/app.py`)
+3. Click the public Gradio URL that appears in the output (format: `https://xxxx.gradio.live`)
+4. Paste any World Cup post into the text box and click Submit
+
+**Dependencies:** gradio, torch, transformers (all available in Colab — no local install needed)
+
+**Interface code:** See `interface/app.py` in this repository.
