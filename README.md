@@ -3,6 +3,11 @@
 
 A fine-tuned text classifier that categorizes World Cup 2026 discourse from r/soccer and r/WorldCup into three categories: `analysis`, `hot_take`, and `reaction`. Built for AI201 Project 3.
 
+## Demo Video
+
+[Watch the demo video here](YOUR_LINK_HERE)
+https://www.loom.com/share/f5c7d2b045474c29a01efb861652272c
+
 ---
 
 ## Community Choice
